@@ -2,6 +2,7 @@ import React from 'react';
 import './Game.css';
 import { calculateWinner } from '../../Helpers/Winner';
 import { Board } from '../Board/Board';
+import { History } from '../History/History';
 
 export class Game extends React.Component {
     constructor(props) {
@@ -77,9 +78,18 @@ export class Game extends React.Component {
                 </div>
                 <div className="game-info">
                     <div>{status}</div>
-                    <ol>{moves}</ol>
+                    {
+                        debugMode() &&
+                        <History moves={moves} />
+                    }
                 </div>
             </div>
         );
     }
+}
+
+function debugMode() {
+    var url = new URL(window.location.href);
+    var c = url.searchParams.get("debug");
+    return (c === 'true');
 }
