@@ -1,0 +1,28 @@
+.history p {
+    font-size: 18px;
+}
+
+.history-list {
+    padding-left: 24px;
+    font-size: 18px;
+}
+
+.history-list li {
+    margin-bottom: 5px;
+}
+
+.history-list li button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-size: 18px;
+    padding: 7px 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #8ce2a0;
+    color: #4d4646;
+}
+
+.history-list li button:hover {
+    background-color: #87dc9b;
+}

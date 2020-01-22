@@ -3,6 +3,9 @@ import './History.css';
 
 export function History(props) {
     return (
-        <ol>{props.moves}</ol>
+        <div className="history">
+            <p>History:</p>
+            <ol className="history-list">{props.moves}</ol>
+        </div>
     );
 }
