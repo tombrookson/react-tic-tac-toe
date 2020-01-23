@@ -1,0 +1,56 @@
+.name-modal {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #00000091;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name-modal-box {
+  width: 90%;
+  max-width: 500px;
+  background-color: #f5eaea;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.name-modal-box p {
+  margin: 0 0 20px 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.name-modal-input {
+  width: 100%;
+  appearance: none;
+  border: none;
+  padding: 7px 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.name-modal-btn {
+  margin: 0 auto;
+  display: block;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 18px;
+  padding: 7px 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #8ce2a0;
+  color: #4d4646;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.name-modal-btn:hover {
+  background-color: #87dc9b;
+}

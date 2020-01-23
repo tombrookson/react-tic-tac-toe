@@ -3,6 +3,7 @@ import './Game.css';
 import { calculateWinner } from '../../Helpers/Winner';
 import { Board } from '../Board/Board';
 import { History } from '../History/History';
+import { NameModal } from '../NameModal/NameModal';
 
 export class Game extends React.Component {
     constructor(props) {
@@ -14,6 +15,9 @@ export class Game extends React.Component {
             }],
             stepNumber: 0,
             xIsNext: true,
+            user: {
+                nickname: '',
+            },
         };
     }
 
@@ -44,6 +48,14 @@ export class Game extends React.Component {
         });
     }
 
+    handleNicknameSubmit(nickname) {
+        this.setState({
+            user: {
+                nickname: nickname,
+            },
+        });
+    }
+
     render() {
         const history = this.state.history;
         const current = history[this.state.stepNumber];
@@ -63,15 +75,22 @@ export class Game extends React.Component {
 
         let status;
         if (winner) {
-            status = 'Winner: ' + winner;
+            status = <div className="game-status">Winner: <strong>{winner}</strong></div>;
         } else {
-            status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+            status = <div className="game-status">Next player: <strong>{(this.state.xIsNext ? 'X' : 'O')}</strong></div>;
         }
+
+        const userNickname = this.state.user.nickname;
 
         return (
             <div className="game">
                 <div className="game-info">
-                    <div>{status}</div>
+                    {status}
+
+                    {
+                        (userNickname !== '') &&
+                        <div className="game-user-nickname">Nickname: <strong>{userNickname}</strong></div>
+                    }
                 </div>
                 <div className="game-board">
                     <Board
@@ -85,6 +104,10 @@ export class Game extends React.Component {
                         <History moves={moves} />
                     }
                 </div>
+                {
+                    (userNickname === '') &&
+                    <NameModal onNicknameSubmit={(e) => this.handleNicknameSubmit(e)} />
+                }
             </div>
         );
     }
