@@ -1,5 +1,4 @@
 .square {
-  background: #4d4646;
   border: none;
   font-size: 60px;
   font-weight: bold;
@@ -10,15 +9,10 @@
   width: 100px;
   flex-grow: 0;
   flex-shrink: 0;
-  color: #f5eaea;
+  color: #5b5656;
 }
-
-.square:nth-of-type(even) {
-  background: #5b5656;
-}
-
-.square:nth-of-type(odd) {
-  background: #4d4646;
+.square:nth-child(n+7) {
+  border-bottom: none;
 }
 
 .square:focus {

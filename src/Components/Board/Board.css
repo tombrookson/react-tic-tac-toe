@@ -1,5 +1,9 @@
 .board-squares {
-  max-width: 300px;
+  width: 312px;
+  height: 312px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  background-color: #5b5656;
 }
